@@ -18,7 +18,7 @@ public class FlightStatusTest extends SeWrappers {
 	public void checkin(String browserName)
 	{
 		try {
-			report.setTCDesc("Validating the SignUp Page with Incorrect and Correct Data");
+			report.setTCDesc("Validating the Flight status Page to find the Status of My flight");
 			launchCrossBrowser(browserName,"https://www.spicejet.com/");
 			
 			
@@ -32,7 +32,7 @@ public class FlightStatusTest extends SeWrappers {
 		
 		catch(Exception ex)
 		{
-			System.out.println("Problem while validating Signup");
+			System.out.println("Problem while validating Flight Status Page");
 			ex.printStackTrace();
 		}
 		

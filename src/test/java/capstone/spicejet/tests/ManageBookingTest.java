@@ -18,7 +18,7 @@ public class ManageBookingTest extends SeWrappers {
 	public void checkin(String browserName)
 	{
 		try {
-			report.setTCDesc("Validating the SignUp Page with Incorrect and Correct Data");
+			report.setTCDesc("Validating the Manage Booking Page");
 			launchCrossBrowser(browserName,"https://www.spicejet.com/");
 			
 			
@@ -32,7 +32,7 @@ public class ManageBookingTest extends SeWrappers {
 		
 		catch(Exception ex)
 		{
-			System.out.println("Problem while validating Signup");
+			System.out.println("Problem while validating Manage Booking Page");
 			ex.printStackTrace();
 		}
 		

@@ -1,8 +1,5 @@
 package capstone.spicejet.pages;
 
-import java.util.List;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -13,7 +10,7 @@ public class SJetSignupPages extends SeWrappers {
 	@FindBy(xpath="//div[text()='Signup']")
 	WebElement button;
 	
-	@FindBy(xpath="//select[@class='form-control form-select ']")
+	@FindBy(xpath="//select[@class='form-control form-select ']")  
 	WebElement option;
 	
 	@FindBy(id="first_name")
@@ -22,10 +19,10 @@ public class SJetSignupPages extends SeWrappers {
 	@FindBy(id="last_name")
 	WebElement lname;
 	
-	@FindBy(xpath="//img[@class='d-inline-block datepicker']")
+	@FindBy(id="dobDate")
 	WebElement date;
 	
-	@FindBy(xpath="//div[@class='react-datepicker__day react-datepicker__day--004 react-datepicker__day--keyboard-selected react-datepicker__day--weekend']")
+	@FindBy(xpath="//div[text()='12']")
 	WebElement day;
 	
 	@FindBy(id="email_id")
@@ -33,6 +30,9 @@ public class SJetSignupPages extends SeWrappers {
 	
 	@FindBy(xpath="//input[@type='tel']")
 	WebElement phone;
+	
+	@FindBy(xpath="//label[text()='About']")
+	WebElement scroll;
 	
 	@FindBy(id="new-password")
 	WebElement pass1;
@@ -48,22 +48,23 @@ public class SJetSignupPages extends SeWrappers {
 	
 	public void clicSignup()
 	{
-		waitForElement(button,20);		
-		//String parentWindow = driver.getWindowHandle();
-		//clickElement(button);
-		//windowHandlingParentWindow();
-		windowHandlingParentWindow();
-		clickElement(button);
+		//waitForElement(button,20);		
+		windowHandlingParentWindow(button);
+		
+		
 	}
 	
 	public void optSelect(String visibleText)
 	{
+		
 		waitForElement(option,20);
+		actionsClick(option);
 		selectByVisibleText(option,visibleText);
 	}
 	
-	public void fnane(String text)
+	public void fnane(String text) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		waitForElement(fname,20);
 		typeText(fname,text);
 	}
@@ -73,26 +74,20 @@ public class SJetSignupPages extends SeWrappers {
 		waitForElement(lname,20);
 		typeText(lname,text);
 		
-		WebElement val = driver.findElement(By.xpath("//img[@class='d-inline-block datepicker']"));
-		val.click();
-
-		// identify all td elements in list
-		List<WebElement> t = driver.findElements(By.xpath(
-				"//div[@class='react-datepicker__day react-datepicker__day--005 react-datepicker__day--keyboard-selected']"));
-		//react-datepicker__day react-datepicker__day--004 react-datepicker__day--keyboard-selected react-datepicker__day--weekend
-		// Date picking
-		for (int k = 0; k < t.size(); k++) {
-			// check date
-			String dt = t.get(k).getText();
-			if (dt.equals("5")) {
-				t.get(k).click();
-				// break;
-			}
-		}
-		// obtain selected date
-		val.getAttribute("value");
+		
+	}
+	
+	public void selDate() {	
+		
+		waitForElement(date,20);
+		clickElement(date);
+		actionsClick(day);
 
 		System.out.print("Date is Successfully selected");
+		
+		
+	
+		
 	}
 	
 	
@@ -101,7 +96,7 @@ public class SJetSignupPages extends SeWrappers {
 		//javascriptExecutorScrollToWebelement(scrollDownValue);
 		waitForElement(phone,20);
 		typeText(phone,text);
-		javascriptExecutorClickWebElement(submit);
+		javascriptExecutorClickWebElement(scroll);
 		
 	}
 	
@@ -117,22 +112,27 @@ public class SJetSignupPages extends SeWrappers {
 		typeText(pass1,text);
 	}
 	
-	public void confirmpass(String text)
+	public void confirmpass(String text) throws InterruptedException
 	{
 		waitForElement(pass2,20);
 		typeText(pass2,text);
+		Thread.sleep(2000);
+		
 	}
 	
-	public void termsBox()
+	public void termsBox() throws InterruptedException
 	{
+		
 		waitForElement(box,30);
-		clickElement(box);
+		Thread.sleep(3000);
+		actionsClick(box);
+		Thread.sleep(3000);
 	}
 	
 	public void clicSubmit()
 	{
 		waitForElement(submit,30);
-		clickElement(submit);
+		actionsClick(submit);
 		
 	}
 	
@@ -142,6 +142,7 @@ public class SJetSignupPages extends SeWrappers {
 		Thread.sleep(5000);
 		closeAllBrowsers();
 	}
+	
 	
 	
 	

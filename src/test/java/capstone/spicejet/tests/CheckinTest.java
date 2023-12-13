@@ -18,7 +18,8 @@ public class CheckinTest extends SeWrappers{
 	public void checkin(String browserName)
 	{
 		try {
-			report.setTCDesc("Validating the SignUp Page with Incorrect and Correct Data");
+			report.setTCDesc("Validating the Checkin Page");
+		
 			launchCrossBrowser(browserName,"https://www.spicejet.com/");
 			
 			
@@ -32,7 +33,7 @@ public class CheckinTest extends SeWrappers{
 		
 		catch(Exception ex)
 		{
-			System.out.println("Problem while validating Signup");
+			System.out.println("Problem while validating Checkin Page");
 			ex.printStackTrace();
 		}
 		

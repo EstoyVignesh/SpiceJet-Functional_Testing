@@ -27,6 +27,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 
+
+
 public class SeWrappers {
 	
 
@@ -477,28 +479,30 @@ public class SeWrappers {
 	}
 
 	//Windowhandling --> 
-
-		public void windowHandlingParentWindow()
+	public void windowHandlingParentWindow(WebElement ele)
+	{
+		try
 		{
-			try
-			{
 
-				
-				Set<String> allWindows = driver.getWindowHandles();
-				
-				for(String eachWindow:allWindows)
-				{
-					driver.switchTo().window(eachWindow);
-				}
-				Reports.reportStep("PASS","Successfully switched to the child Window");
-
-			}
-			catch(Exception ex)
+			String parentWindow= driver.getWindowHandle();
+			
+			ele.click();
+			
+			Set<String> allWindows = driver.getWindowHandles();
+			
+			for(String eachWindow:allWindows)
 			{
-				Reports.reportStep("FAIL","Problem while Switching to the child Window");
-				ex.printStackTrace();
+				driver.switchTo().window(eachWindow);
 			}
+			Reports.reportStep("PASS","Successfully switched to the child Window");
+
 		}
+		catch(Exception ex)
+		{
+			Reports.reportStep("FAIL","Problem while Switching to the child Window");
+			ex.printStackTrace();
+		}
+	}
 		
 		public void windowHandlingSwitchParentWindow()
 		{

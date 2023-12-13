@@ -18,7 +18,7 @@ public class SjetLoginTest extends SeWrappers{
 	public void loginTest(String browserName)
 	{
 		try {
-			report.setTCDesc("Validating the SignUp Page with Incorrect and Correct Data");
+			report.setTCDesc("Validating the Login Page with Incorrect and Correct Data");
 			launchCrossBrowser(browserName,"https://www.spicejet.com/");
 			
 			
@@ -32,7 +32,7 @@ public class SjetLoginTest extends SeWrappers{
 		
 		catch(Exception ex)
 		{
-			System.out.println("Problem while validating Signup");
+			System.out.println("Problem while validating Login");
 			ex.printStackTrace();
 		}
 		

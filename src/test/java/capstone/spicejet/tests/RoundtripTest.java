@@ -17,7 +17,7 @@ public class RoundtripTest extends SeWrappers {
 	public void roundTrip(String browserName)
 	{
 		try {
-			report.setTCDesc("Validating the SignUp Page with Incorrect and Correct Data");
+			report.setTCDesc("Validating the RoundTrip Test Scenario");
 			launchCrossBrowser(browserName,"https://www.spicejet.com/");
 			
 			
@@ -31,7 +31,7 @@ public class RoundtripTest extends SeWrappers {
 		
 		catch(Exception ex)
 		{
-			System.out.println("Problem while validating Signup");
+			System.out.println("Problem while validating Roundtrip");
 			ex.printStackTrace();
 		}
 		

@@ -17,7 +17,7 @@ public class OnewayTest extends SeWrappers {
 	public void OneWay(String browserName)
 	{
 		try {
-			report.setTCDesc("Validating the SignUp Page with Incorrect and Correct Data");
+			report.setTCDesc("Validating the OneWay Trip and the Payment method");
 			launchCrossBrowser(browserName,"https://www.spicejet.com/");
 			
 			
@@ -31,7 +31,7 @@ public class OnewayTest extends SeWrappers {
 		
 		catch(Exception ex)
 		{
-			System.out.println("Problem while validating Signup");
+			System.out.println("Problem while validating the OneWay Trip");
 			ex.printStackTrace();
 		}
 		

@@ -8,7 +8,16 @@
 <class name="capstone.spicejet.utils.SeWrappers" />
 			<class name="capstone.spicejet.utils.SJwrappers" />
 			<class name="capstone.spicejet.utils.Reports" />
-			<class name="capstone.spicejet.tests.OnewayTest" />    </classes>
+			<class name="capstone.spicejet.tests.LinkVerifyTest" />
+			<class name="capstone.spicejet.tests.SJsignupTest" />
+			<class name="capstone.spicejet.tests.SjetLoginTest" />
+			<class name="capstone.spicejet.tests.OnewayTest" />
+			<class name="capstone.spicejet.tests.RoundtripTest" />
+			<class name="capstone.spicejet.tests.CheckinTest" />
+			<class name="capstone.spicejet.tests.FlightStatusTest" />
+			<class name="capstone.spicejet.tests.ManageBookingTest" />
+			
+			</classes>
   </test> <!-- Test -->
   
   
