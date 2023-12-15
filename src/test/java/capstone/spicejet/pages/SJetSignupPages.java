@@ -125,7 +125,13 @@ public class SJetSignupPages extends SeWrappers {
 		
 		waitForElement(box,30);
 		Thread.sleep(3000);
-		actionsClick(box);
+		clickElement(box);
+		if(box.isSelected()) {
+			System.out.println("The Tick Box is Selected");
+		}
+		else {
+			System.out.println("The Tick Box is not selected");
+		}
 		Thread.sleep(3000);
 	}
 	

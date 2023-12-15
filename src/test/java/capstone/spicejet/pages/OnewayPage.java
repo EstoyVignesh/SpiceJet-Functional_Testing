@@ -140,7 +140,13 @@ public class OnewayPage extends SeWrappers{
 	public void flightsearch()
 	{
 		waitForElement(flight,20);
-		actionsClick(flight);
+		actionsDoubleClick(flight);
+		//actionsClick(flight);
+		
+		if(flight.isDisplayed())
+		{
+			System.out .println("Flight Search button is Clicked");
+		}
 		
 		
 	}
@@ -332,9 +338,9 @@ public class OnewayPage extends SeWrappers{
 		
 	}
 	
-	public void proceedToPay()
+	public void proceedToPay(int scrollDownValue)
 	{
-		
+		javascriptExecutorScrollToWebelement(scrollDownValue);
 		waitForElement(proceed,20);
 		actionsClick(proceed);
 		

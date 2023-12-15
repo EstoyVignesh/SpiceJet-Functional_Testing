@@ -65,6 +65,7 @@ public class SJwrappers extends SeWrappers {
 		sj.password("@Vignesh1998");
 		sj.clicSubmit();
 		sj.validation();
+		captureScreenshot("Login-ValidData");	
 		sj.exit();
 	}
 	
@@ -78,6 +79,7 @@ public class SJwrappers extends SeWrappers {
 		op.clicdest();
 		op.clicDate1();	
 		op.flightsearch();
+		captureScreenshot("Oneway-Flightsearch");	
 		op.searchAgain();
 		op.name1("Vinesh");
 		op.name2("palani");
@@ -100,7 +102,7 @@ public class SJwrappers extends SeWrappers {
 		op.year("28");
 		op.switchFrame4();
 		op.securityCode("154");
-		op.proceedToPay();
+		op.proceedToPay(300);
 			
 		op.validation();
 		captureScreenshot("ClickPayment-OneWay");
@@ -121,6 +123,7 @@ public class SJwrappers extends SeWrappers {
 		op.selDate();
 		op.clicDate2();
 		op.flightsearch();
+		captureScreenshot("RoundTrip-Flightsearch");	
 		op.searchAgain();
 		op.name1("Vinesh");
 		op.name2("palani");
@@ -143,7 +146,7 @@ public class SJwrappers extends SeWrappers {
 		op.year("28");
 		op.switchFrame4();
 		op.securityCode("154");
-		op.proceedToPay();
+		op.proceedToPay(300);
 			
 		op.validation();
 		captureScreenshot("ClickPayment-RoundTrip");

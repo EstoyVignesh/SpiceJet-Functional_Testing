@@ -10,6 +10,7 @@
 			<class name="capstone.spicejet.tests.LinkVerifyTest" />
 			<class name="capstone.spicejet.tests.SJsignupTest" />
 			<class name="capstone.spicejet.tests.SjetLoginTest" />
+			<class name="capstone.spicejet.tests.SjetLoginTest1" />
 			<class name="capstone.spicejet.tests.OnewayTest" />
 			<class name="capstone.spicejet.tests.RoundtripTest" />
 			<class name="capstone.spicejet.tests.CheckinTest" />

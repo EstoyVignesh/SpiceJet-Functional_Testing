@@ -8,7 +8,7 @@ import capstone.spicejet.utils.Reports;
 import capstone.spicejet.utils.SJwrappers;
 import capstone.spicejet.utils.SeWrappers;
 
-public class SjetLoginTest extends SeWrappers{
+public class SjetLoginTest1 extends SeWrappers{
 	
 	SJwrappers sj  = new SJwrappers();
 	Reports report = new Reports();
@@ -18,13 +18,13 @@ public class SjetLoginTest extends SeWrappers{
 	public void loginTest(String browserName)
 	{
 		try {
-			report.setTCDesc("Validating the Login Page with Incorrect Data");
+			report.setTCDesc("Validating the Login Page with Correct Data");
 			launchCrossBrowser(browserName,"https://www.spicejet.com/");
 			
 			
 			
-			sj.invalidDatalogin();	
-			
+		
+			sj.validDatalogin();
 			 
 			
 				

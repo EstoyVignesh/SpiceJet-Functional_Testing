@@ -24,6 +24,8 @@ public class RoundtripPage extends SeWrappers{
 	@FindBy(xpath="//div[text()='13']")
 	WebElement date1;
 	
+	@FindBy(xpath="//div[text()='Return Date']")
+	WebElement date02;	
 
 	@FindBy(xpath="//div[@data-testid='return-date-dropdown-label-test-id']")
 	WebElement date2;	
@@ -117,8 +119,13 @@ public class RoundtripPage extends SeWrappers{
 	{
 		waitForElement(origin,20);
 		clickElement(origin);
-		
-		
+		if(origin.isSelected())
+		{
+			System.out.println("origin Places are Visible");
+		}
+		else {
+			System.out.println("origin Places are Not Visible");
+		}
 	}
 
 	public void selecCiti()
@@ -148,6 +155,7 @@ public class RoundtripPage extends SeWrappers{
 	public void selDate()
 	{
 		waitForElement(date2,20);
+		clickElement(date02);
 		clickElement(date2);
 		
 		
@@ -157,6 +165,14 @@ public class RoundtripPage extends SeWrappers{
 	{
 		waitForElement(seldate,20);
 		clickElement(seldate);
+
+		if(seldate.isSelected()) {
+			System.out.println("Return Date is Selected");
+		}
+		else {
+			System.out.println("Return Date is Not Selected");
+		}
+		
 		
 		
 	}
@@ -357,9 +373,9 @@ public class RoundtripPage extends SeWrappers{
 		
 	}
 	
-	public void proceedToPay()
+	public void proceedToPay(int scrollDownValue)
 	{
-		
+		javascriptExecutorScrollToWebelement(scrollDownValue);
 		waitForElement(proceed,20);
 		actionsClick(proceed);
 		

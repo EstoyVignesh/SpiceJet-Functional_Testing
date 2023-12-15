@@ -57,6 +57,9 @@ public class SjetLoginPage1 extends SeWrappers{
 		if(verify.getText().equals("Hi Vignesh"))
 		{
 			System.out.println("The Validation Text name is : "+verify.getText());
+		}else
+		{
+			System.out.println("Error in Login Data's.");
 		}
 		
 	}
